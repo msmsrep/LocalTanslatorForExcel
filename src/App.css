@@ -1,4 +1,6 @@
 #root {
+  /* レスポンシブ対応のために。固定ではなく100% */
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -66,4 +68,15 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+/* レスポンシブ対応のために */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .sidebar {
+    display: none;
+  }
 }
