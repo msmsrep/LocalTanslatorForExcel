@@ -106,17 +106,22 @@ function App() {
 
   return (
     <>
-      <h1>Transformers.js</h1>
-      <h2>ML-powered multilingual translation in React!</h2>
+      <h1>Local Tanslator for Excel!</h1>
+      <h2>エクセルでローカル翻訳！</h2>
 
       <div className="container">
+        <div className="button-group">
+          <button disabled={disabled} onClick={translate}>
+            Translate
+          </button>
+          <button onClick={swapLanguages}>⇔Swap⇔</button>
+        </div>
         <div className="language-container">
           <LanguageSelector
             type={"Source"}
             value={sourceLanguage}
             onChange={(x) => setSourceLanguage(x.target.value)}
           />
-          <button onClick={swapLanguages}>⇔Swap⇔</button>
           <LanguageSelector
             type={"Target"}
             value={targetLanguage}
@@ -129,10 +134,6 @@ function App() {
           <textarea value={output} rows={3} readOnly></textarea>
         </div>
       </div>
-
-      <button disabled={disabled} onClick={translate}>
-        Translate
-      </button>
 
       <div className="progress-bars-container">
         {ready === false && <label>Loading models... (only run once)</label>}
