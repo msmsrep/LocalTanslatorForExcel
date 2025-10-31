@@ -10,13 +10,14 @@
 .language-container {
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 
 .textbox-container {
   display: flex;
   justify-content: center;
   gap: 20px;
-  width: 800px;
+  /* width: 800px; */
 }
 
 .textbox-container > textarea,
